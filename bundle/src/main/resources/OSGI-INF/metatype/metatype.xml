@@ -8,15 +8,15 @@
     description="%cowsay.desc"
     ibm:alias="cowsay">
 
-    <AD id="startmessage"
-      name="%startmessage.name"
-      description="%startmessage.desc"
+    <AD id="message"
+      name="%message.name"
+      description="%message.desc"
       type="String"
     />
 
-    <AD id="startcowfile"
-      name="%startcowfile.name"
-      description="%startcowfile.desc"
+    <AD id="cowfile"
+      name="%cowfile.name"
+      description="%cowfile.desc"
       type="String"
       default="cow"
     />

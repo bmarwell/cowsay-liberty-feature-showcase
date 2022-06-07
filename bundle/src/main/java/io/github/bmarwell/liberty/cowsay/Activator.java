@@ -23,9 +23,9 @@ public class Activator implements BundleActivator, ManagedService {
 
   private final Lock lock = new ReentrantLock();
 
-  private String startmessage;
+  private String message;
 
-  private String startcowfile = "cow";
+  private String cowfile = "cow";
 
   @Override
   public void start(BundleContext context) throws Exception {
@@ -45,22 +45,22 @@ public class Activator implements BundleActivator, ManagedService {
       return;
     }
 
-    Object startcowfile = properties.get("startcowfile");
-    if (startcowfile instanceof String) {
-      this.startcowfile = (String) startcowfile;
+    Object cowfile = properties.get("cowfile");
+    if (cowfile instanceof String) {
+      this.cowfile = (String) cowfile;
     }
 
-    Object startmessage = properties.get("startmessage");
-    if (startmessage instanceof String) {
-      this.startmessage = (String) startmessage;
+    Object message = properties.get("message");
+    if (message instanceof String) {
+      this.message = (String) message;
     }
   }
 
   private void emitStartMessage()  {
-    if (this.startmessage != null) {
+    if (this.message != null) {
       CowExecutor cowExecutor = new CowExecutor();
-      cowExecutor.setCowfile(this.startcowfile);
-      cowExecutor.setMessage(this.startmessage);
+      cowExecutor.setCowfile(this.cowfile);
+      cowExecutor.setMessage(this.message);
       String cowsay = cowExecutor.execute();
 
       try {
@@ -77,7 +77,7 @@ public class Activator implements BundleActivator, ManagedService {
   protected Dictionary<String, ?> getConfigDefaults() {
     Hashtable<String, Object> configDefaults = new Hashtable<>();
     configDefaults.put(org.osgi.framework.Constants.SERVICE_PID, "cowsay");
-    configDefaults.put("startcowfile", "cow");
+    configDefaults.put("cowfile", "cow");
 
     return configDefaults;
   }

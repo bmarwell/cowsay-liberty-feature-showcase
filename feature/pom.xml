@@ -44,7 +44,7 @@
                 <Subsystem-Name>Cowsay ${project.version.libertyfeature}</Subsystem-Name>
                 <Subsystem-Description>Cowsay to the log on startup</Subsystem-Description>
                 <Subsystem-Vendor>Benjamin Marwell</Subsystem-Vendor>
-                <Subsystem-SymbolicName>cowsay; visibility:=public</Subsystem-SymbolicName>
+                <Subsystem-SymbolicName>cowsay-${project.version.libertyfeature}; visibility:=public</Subsystem-SymbolicName>
                 <Subsystem-Localization>OSGI-INF/l10n/loc</Subsystem-Localization>
                 <IBM-Feature-Version>2</IBM-Feature-Version>
                 <IBM-ShortName>cowsay-${project.version.libertyfeature}</IBM-ShortName>
