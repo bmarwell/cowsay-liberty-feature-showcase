@@ -30,8 +30,6 @@ public class Activator implements BundleActivator, ManagedService {
   @Override
   public void start(BundleContext context) throws Exception {
     configRef = context.registerService(ManagedService.class, this, this.getConfigDefaults());
-
-    emitStartMessage();
   }
 
   @Override
@@ -54,6 +52,8 @@ public class Activator implements BundleActivator, ManagedService {
     if (message instanceof String) {
       this.message = (String) message;
     }
+
+    emitStartMessage();
   }
 
   private void emitStartMessage()  {
