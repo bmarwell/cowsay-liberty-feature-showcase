@@ -2,7 +2,10 @@
 :icons: font
 :toc: macro
 
-Cowsay for your Liberty!
+Cowsay for your Liberty! +
+This repo contains the code for the blog post https://blog.bmarwell.de/2022/06/10/developing-an-ibm-openliberty-feature.html[Guide: How to develop an IBM OpenLiberty Feature].
+
+'''
 
 toc::[]
 
@@ -15,3 +18,8 @@ You will need Java 11 to build this plugin, but Java 11 is enough as a runtime.
 ----
 ./mvnw verify -Pdocs,run-its
 ----
+
+== Extended project
+
+If you want to see more advanced features:
+There's an extended repo: https://github.com/bmarwell/cowsay-liberty-feature[bmarwell/cowsay-liberty-feature]. It features more complex configuration, integration tests, and more!
